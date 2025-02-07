@@ -1,4 +1,11 @@
-import Create_Accounts, Login, Chat, password_reset, os
+import AccountCreator, Login, Chat, password_reset, os, sys, subprocess
+
+try:
+    import cloudscraper
+except ImportError:
+    print("cloudscraper not found. Installing...")
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "cloudscraper"])
+    import cloudscraper
 
 def Clear():
     os.system('cls' if os.name == 'nt' else 'clear')
