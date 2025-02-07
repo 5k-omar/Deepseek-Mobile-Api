@@ -42,7 +42,8 @@ def Session_Creation():
         return None
 
 
-def Chat(session_id):
+def Chat():
+    session_id = Session_Creation()
     if session_id is None:
         print("No valid session ID, cannot proceed with chat.")
         return
@@ -84,5 +85,5 @@ def Chat(session_id):
         print("\nResponseCode: ", response.status_code)
         print("\nResponse: ", response.text)
 
-session_id = Session_Creation()
-Chat(session_id)
+if __name__ == "__main__":
+    Chat()
